@@ -1,0 +1,36 @@
+package br.senai.sp.jandira.login.logincomponent.components
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Color.Companion.Magenta
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
+import br.senai.sp.jandira.login.R
+
+@Composable
+fun Header(color: Color) {
+    Row (
+        modifier = Modifier.background(color)
+    ){
+        Column {
+            Text(text = stringResource(R.string.login))
+            Text(text = stringResource(R.string.informe_seus_dados))
+        }
+        Image(
+            painter = painterResource(id = R.drawable.ic_launcher_foreground) ,
+            contentDescription = "" )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun HeaderPreview() {
+    Header(Color.Cyan)
+}
